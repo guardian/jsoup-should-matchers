@@ -4,9 +4,9 @@ organization := "com.gu"
 
 name := "jsoup-should-matchers"
 
-scalaVersion := "2.10.0"
+scalaVersion := "2.11.2"
 
-version := "0.1"
+version := "0.2"
 
 publishArtifact := true
 
@@ -30,6 +30,6 @@ publishTo <<= (version) { version: String =>
 
 libraryDependencies ++= Seq(
   "org.jsoup" % "jsoup" % "1.6.1",
-  "org.scalatest" %% "scalatest" % "1.9.1"
+  "org.scalatest" %% "scalatest" % "2.2.2"
 )
 

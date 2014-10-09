@@ -1,10 +1,10 @@
 package com.gu.scalatest
 
+import com.gu.jsoup.{ElementSelector, ElementSelectorBuilders, Select}
+import org.jsoup.nodes.Element
 import org.scalatest.exceptions.TestFailedException
 import org.scalatest.matchers.ShouldMatchers
-
-import org.jsoup.nodes.Element
-import com.gu.jsoup.{Select, ElementSelector, ElementSelectorBuilders}
+import org.scalatest.words.{IncludeWord, NotWord}
 
 
 trait JsoupShouldMatchers extends ShouldMatchers with ElementSelectorBuilders with ElementWords {
