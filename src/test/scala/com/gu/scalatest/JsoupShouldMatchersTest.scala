@@ -5,6 +5,11 @@ import org.scalatest.matchers.ShouldMatchers
 
 class JsoupShouldMatchersTest extends FunSuite with ShouldMatchers with JsoupShouldMatchers {
 
+  test("withValue"){
+    "<div><p>Hello, world!</p></div>".asBodyFragment should include element withName("p").and(withValue("Hello, world!"))
+    "<div><p>Hello, world!</p></div>".asBodyFragment should not include element (withName("p").and(withValue("Hello, Chris!")))
+  }
+
   test("withName") {
     "<div><p>Hello, world!</p></div>".asBodyFragment should include element withName("p")
     "<div><p>Hello, world!</p></div>".asBodyFragment should not include element (withName("img"))

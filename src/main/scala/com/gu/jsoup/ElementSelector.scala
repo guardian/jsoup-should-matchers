@@ -57,6 +57,9 @@ trait ElementSelectorBuilders {
 
   private def selfAnd(f: Element => Elements, desc: String) = self.and(Select(f, Some(desc)))
 
+  def withValue(value: String): ElementSelector =
+    selfAnd(_.getElementsContainingText(value), s"""with value $value""")
+
   def withName(name: String): ElementSelector =
     selfAnd(_.getElementsByTag(name), """with name "%s"""".format(name))
 
